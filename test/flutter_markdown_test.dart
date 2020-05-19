@@ -139,15 +139,23 @@ void main() {
     ]);
   });
 
-  testWidgets('Horizontal Rule - five hyphen', (WidgetTester tester) async {
-    await tester.pumpWidget(_boilerplate(const MarkdownBody(data: '-----')));
+  testWidgets('Horizontal Rule - 3 hyphen', (WidgetTester tester) async {
+
+    await tester.pumpWidget(
+      _boilerplate(const MarkdownBody(
+        data: '---'))
+    );
 
     final Iterable<Widget> widgets = tester.allWidgets;
     _expectWidgetTypes(widgets, <Type>[Directionality, MarkdownBody, DecoratedBox, SizedBox]);
   });
   
-  testWidgets('Horizontal Rule - three hyphen', (WidgetTester tester) async {
-    await tester.pumpWidget(_boilerplate(const MarkdownBody(data: '---')));
+  testWidgets('Horizontal Rule - 5 hyphen', (WidgetTester tester) async {
+
+    await tester.pumpWidget(
+      _boilerplate(const MarkdownBody(
+        data: '-----'))
+    );
 
     final Iterable<Widget> widgets = tester.allWidgets;
     _expectWidgetTypes(widgets, <Type>[Directionality, MarkdownBody, DecoratedBox, SizedBox]);
